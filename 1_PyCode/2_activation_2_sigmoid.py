@@ -8,16 +8,16 @@ def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
 # Step function
-def step_funct(x):
-    y = x > 0
-    return y.astype(np.int32)
+def step_funct(x): # ([0, 0.7, 0.7, 0])
+    y = x > 0   #([False, True, True, False])
+    return y.astype(np.int32) # (0, 1, 1, 0)
 
 # Numpy 배열로 테스트해보기
 x = np.array([-1.0, 1.0, 2.0])
 print(sigmoid(x))
-x1 = 1.0 + x
+x1 = 1.0 + x   # 입력 수를 키워도 0~1 사이
 print(sigmoid(x1))
-x2 = 1.0 / x
+x2 = 1.0 / x   # 입력 수를 줄여도 0~1 사이
 print(sigmoid(x2))
 
 # Sigmoid 그래프 그리기

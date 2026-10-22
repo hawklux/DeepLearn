@@ -49,6 +49,9 @@ print("===== 픽셀값 범위 =====")
 print("최솟값:", x_train.min())
 print("최댓값:", x_train.max())
 
+print("===== 데이터 샘플 =====")
+print("x_train[:2] ->", x_train[:2])
+print("y_train[:2] ->", y_train[:2])
 
 # --------------------------------------------------
 # 4. 클래스 번호와 이름 출력
@@ -65,9 +68,14 @@ for class_number, class_name in enumerate(class_names):
 image_index = 0
 
 image = x_train[image_index]
+# print(image) # 3차원
+print("0번 이미지의 첫 번째 픽셀:", image[:1][0]) # 2차원
+print("0번 이미지의 첫 번째 픽셀행 길이:", len(image[:1][0])) # 32
 
-# y_train[0]은 [6] 같은 1차원 배열이므로
-# [0]을 한 번 더 사용해서 숫자를 꺼낸다.
+
+# y_train은 [[3] [8] [8] [0] [6]...] 같은 2차원 배열
+# y_train[0][0] -> 3
+print("y_train[:4]:", y_train[:4])  #[[3] [8] [8] [0]]
 label_number = int(y_train[image_index, 0])
 label_name = class_names[label_number]
 

@@ -1,4 +1,6 @@
 # Cross Entropy Error
+# 정답 클래스에 높은 확률을 줄수록 교차 엔트로피 손실이 작아지는지 보기
+# 이를 위해 확률을 for문으로 직접 바꿔보며 정답일 확률의 놀람값을 손실로 계산해보고 그 변화를 느껴보는 코드.
 
 import numpy as np
 import matplotlib.pylab as plt
@@ -9,14 +11,6 @@ def cross_entropy_error(y, t):
 
 # 정답 (one-hot encoding으로 하나가 선별됨)
 t = np.array([0, 0, 1, 0, 0, 0, 0, 0, 0, 0]) 
-# # 10개 클래스에 대한 모델의 예측 확률 분포값(총합 = 1.0)
-# y = np.array([0.05, 0.05, 0.6, 0.0, 0.05, 0.1, 0.0, 0.1, 0.0, 0.0])
-# y = y/y.sum()  # 전체 합을 1로 정규화(y[0]/0.95, y[1]/0.95 ...)
-# print("SUM:", y.sum())
-
-# # 1. Cross Entropy Error 테스팅
-# res = cross_entropy_error(np.array(y), np.array(t))
-# print(f"{res:.2f}")     # 0.46
 
 # 2. 그래프로 보기 (y_val[2] val값만 0~1까지 변화시킴. t[2]=1 정답이므로.)
 x_axis = np.arange(0.0, 1.0, 0.01)

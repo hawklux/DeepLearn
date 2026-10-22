@@ -45,5 +45,5 @@ x = np.arange(-5.0, 5.0, 0.1)
 y1 = softmax_1(x)
 y2 = softmax_2(x)
 plt.plot(x, y1)
-plt.plot(x, y2, 'k--')
+plt.plot(x, y2, 'k--') # max를 빼도 동일한 곡선 그림
 plt.show()

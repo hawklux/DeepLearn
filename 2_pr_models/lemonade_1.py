@@ -4,8 +4,8 @@ import pandas as pd
 import tensorflow as tf
 
 # 1. 데이터 준비
-data_path = r"Bongsu\1_Data_tensorflow1_Bong\bongsu_Data\lemonade.csv"
-data = pd.read_csv(data_path)
+url = "https://raw.githubusercontent.com/hawklux/DeepLearn/main/1_Data/lemonade.csv"
+data = pd.read_csv(url)
 
 x_data = data[['온도']]
 t_data = data[['판매량']]

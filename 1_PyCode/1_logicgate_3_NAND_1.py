@@ -17,5 +17,5 @@ def NAND (x1, x2):
 for input_ in inputs:
     x1, x2 = input_
     y = NAND(x1, x2)
-    print(y)
+    print(y)   # 1, 1, 1, 0
     

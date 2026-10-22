@@ -3,8 +3,9 @@
 import tensorflow as tf
 from tensorflow.keras.layers import Dense, BatchNormalization, Input
 from tensorflow.keras.models import Model
+import numpy as np
 
-# 간단한 신경망 모델 생성
+# 간단한 신경망 모델 설정
 def create_model():
     inputs = Input(shape=(10,))
     x = Dense(64, activation='relu')(inputs)
@@ -20,7 +21,7 @@ model = create_model()
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
 # 가상의 데이터 생성
-data = np.random.random((100, 10))  # 100개의 샘플, 10개의 특성
+data = np.random.random((100, 10))  # 100개의 샘플 = 10개 특성 * 10개 행()
 labels = np.random.randint(2, size=(100, 1))  # 0과 1로 이루어진 이진 분류 라벨
 
 # 모델 학습

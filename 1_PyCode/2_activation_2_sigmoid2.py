@@ -1,5 +1,4 @@
 # Sigmoid를 퍼셉트론에 적용하기
-
 import numpy as np
 
 # Sigmoid 함수 정의 
